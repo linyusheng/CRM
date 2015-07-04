@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="product-manage" extends="com.R72X">       	
+    
+    <action name="listproduct" class="ProductAction" method="search">
+	<result name="success">/product-manage/list-product.jsp</result>
+	</action>
+	
+	<action name="addproduct" class="ProductAction" method="load">
+	<result name="success">/product-manage/add-product.jsp</result>
+	</action>
+	
+	<action name="editproduct" class="ProductAction" method="load">
+	<result name="success">/product-manage/edit-product.jsp</result>
+	</action>
+	
+	<action name="saveproduct" class="ProductAction" method="save">
+	<result type="redirect">/listproduct.action</result>
+	</action>
+	
+	<action name="removeproduct" class="ProductAction" method="remove">
+	<result type="redirect">/listproduct.action</result>
+	</action>
+
+	<action name="viewproduct" class="ProductAction" method="load">
+	<result name="success" >/product-manage/view-product.jsp</result>
+	</action>
+	
+	<action name="listproductcate" class="ProductcategoryAction" method="search">
+	<result name="success" >/product-manage/list-productcategory.jsp</result>
+	</action>
+	
+	<action name="editproductcate" class="ProductcategoryAction" method="load">
+	<result name="success" >/product-manage/edit-productcategory.jsp</result>
+	</action>
+	
+	<action name="saveproductcate" class="ProductcategoryAction" method="save">
+	<result type="redirect">/listproductcate.action</result>
+	</action>
+	
+	<action name="removeproductcate" class="ProductcategoryAction" method="remove">
+	<result type="redirect">/listproductcate.action</result>
+	</action>
+	
+	<action name="viewproductcate" class="ProductcategoryAction" method="load">
+	<result name="success"> /product-manage/view-productcategory.jsp</result>
+	</action>
+	
+	<action name="addproductcate" class="ProductcategoryAction" method="load">
+	<result name="success" >/product-manage/add-productcategory.jsp</result>
+	</action>
+	
+	
+	
+	</package>
+
+</struts>    

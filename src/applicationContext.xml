@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/crm_2x">
+    	</property>
+
+        <property name="username" value="root"></property>
+		<property name="password" value="12345"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"></ref>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/R72X/entity/Sellswarn.hbm.xml</value>
+				<value>com/R72X/entity/Product.hbm.xml</value>
+				<value>com/R72X/entity/Contactnote.hbm.xml</value>
+				<value>com/R72X/entity/User.hbm.xml</value>
+				<value>com/R72X/entity/Commonproblem.hbm.xml</value>
+				<value>com/R72X/entity/Enterprise.hbm.xml</value>
+				<value>com/R72X/entity/Customer.hbm.xml</value>
+				<value>com/R72X/entity/Productcategory.hbm.xml</value>
+				<value>com/R72X/entity/Contactplan.hbm.xml</value>
+				<value>com/R72X/entity/Sellsopportunity.hbm.xml</value>
+				<value>com/R72X/entity/Problemsolution.hbm.xml</value>
+				<value>com/R72X/entity/Compact.hbm.xml</value>
+				<value>com/R72X/entity/Complaint.hbm.xml</value></list>
+		</property></bean>
+	<bean id="SellswarnDAO" class="com.R72X.entity.SellswarnDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ProductDAO" class="com.R72X.entity.ProductDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ContactnoteDAO" class="com.R72X.entity.ContactnoteDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.R72X.entity.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="CommonproblemDAO"
+		class="com.R72X.entity.CommonproblemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="EnterpriseDAO" class="com.R72X.entity.EnterpriseDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="CustomerDAO" class="com.R72X.entity.CustomerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ProductcategoryDAO"
+		class="com.R72X.entity.ProductcategoryDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ContactplanDAO" class="com.R72X.entity.ContactplanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="SellsopportunityDAO"
+		class="com.R72X.entity.SellsopportunityDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ProblemsolutionDAO"
+		class="com.R72X.entity.ProblemsolutionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="CompactDAO" class="com.R72X.entity.CompactDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ComplaintDAO" class="com.R72X.entity.ComplaintDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean></beans>

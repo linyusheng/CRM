@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="user-manage" extends="com.R72X">       	
+       	<action name="listuser" class="UserAction" method="search">
+       		<result>/system-manage/list-user.jsp</result>
+       	</action>
+       	<action name="viewuser" class="UserAction" method="load">
+       		<result>/system-manage/view-user.jsp</result>
+       	</action>
+       	<action name="edituser" class="UserAction" method="load">
+       		<result>/system-manage/edit-user.jsp</result>
+       	</action>
+       	<action name="saveuser" class="UserAction" method="save">
+       		<result type="redirect">/listuser</result>
+       	</action>
+       	<action name="removeuser" class="UserAction" method="remove">
+       		<result type="redirect">/listuser.action</result>
+       	</action>
+       	<action name="adduser" class="UserAction" method="load">
+       		<result>/system-manage/add-user.jsp</result>
+       	</action>          	       	      
+	</package>
+
+</struts>    
+   

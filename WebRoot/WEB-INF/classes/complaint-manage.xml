@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="complaint-manage" extends="com.R72X">       	
+       	<action name="listcomplaint" class="ComplaintAction" method="search">
+       		<result>/complaint-manage/list-complaint.jsp</result>
+       	</action>
+       	<action name="signcomplaint" class="ComplaintAction" method="sign">
+       		<result type="redirect">/listcomplaint.action</result>
+       	</action>
+       	<action name="viewcomplaint" class="ComplaintAction" method="load">
+       		<result>/complaint-manage/view-complaint.jsp</result>
+       	</action>
+       	<action name="editcomplaint" class="ComplaintAction" method="load">
+       		<result>/complaint-manage/edit-complaint.jsp</result>
+       	</action>
+       	<action name="savecomplaint" class="ComplaintAction" method="save">
+       		<result type="redirect">/listcomplaint.action</result>
+       	</action>
+       	<action name="removecomplaint" class="ComplaintAction" method="remove">
+       		<result type="redirect">/listcomplaint.action</result>
+       	</action>
+       	<action name="addcomplaint" class="ComplaintAction" method="doNothing">
+       		<result>/complaint-manage/add-complaint.jsp</result>
+       	</action>
+	</package>
+
+</struts>    
+   

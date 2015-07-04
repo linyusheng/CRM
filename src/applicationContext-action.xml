@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="LoginAction" class="com.R72X.action.LoginAction" scope="prototype">
+		<property name="userService" ref="UserService" />
+	</bean>
+	<bean id="CompactAction" class="com.R72X.action.CompactAction" scope="prototype">
+		<property name="compactService" ref="CompactService" />
+		<property name="productService" ref="ProductService" />
+		<property name="productcategoryService" ref="ProductcategoryService" />
+		<property name="enterpriseService" ref="EnterpriseService" />
+		<property name="userService" ref="UserService" />
+	</bean>
+
+	<bean id="SellsopportunityAction" class="com.R72X.action.SellsopportunityAction" scope="prototype">
+		<property name="sellsopportunityService" ref="SellsopportunityService" />
+		<property name="customerService" ref="CustomerService" />
+	</bean>
+	<bean id="SellswarnAction" class="com.R72X.action.SellswarnAction" scope="prototype">
+		<property name="sellswarnService" ref="SellswarnService" />
+	</bean>
+
+	<bean id="CustomerAction" class="com.R72X.action.CustomerAction" scope="prototype">
+		<property name="customerService" ref="CustomerService" />
+		<property name="enterpriseService" ref="EnterpriseService" />
+	</bean>
+	<bean id="EnterpriseAction" class="com.R72X.action.EnterpriseAction" scope="prototype">
+		<property name="EnterpriseService" ref="EnterpriseService" />
+	</bean>
+
+	<bean id="UserAction" class="com.R72X.action.UserAction" scope="prototype">
+		<property name="userService" ref="UserService"></property>
+		<property name="contactplanService" ref="ContactplanService"></property>
+		<property name="customerService" ref="CustomerService"></property>
+		<property name="contactnoteService" ref="ContactnoteService"></property>
+	</bean>
+	<bean id="ComplaintAction" class="com.R72X.action.ComplaintAction" scope="prototype">
+		<property name="complaintService" ref="ComplaintService"></property>	
+	</bean>
+	<bean id="CommonProblemAction" class="com.R72X.action.CommonProblemAction" scope="prototype">
+		<property name="commonproblemService" >
+			<ref bean="CommonProblemService" ></ref>
+		</property>
+	</bean>
+	<bean id="ContactnoteAction" class="com.R72X.action.ContactnoteAction" scope="prototype">
+		<property name="contactnoteService" ref="ContactnoteService" />
+		<property name="enterpriseService" ref="EnterpriseService" />
+	</bean>
+	<bean id="ProblemSolutionAction" class="com.R72X.action.ProblemSolutionAction" scope="prototype">
+		<property name="problemSolutionService" >
+			<ref bean="ProblemSolutionService" ></ref>
+		</property>
+	</bean>
+	<bean id="ContactplanAction" class="com.R72X.action.ContactplanAction" scope="prototype">
+		<property name="contactplanService" ref="ContactplanService" />
+		<property name="enterpriseService" ref="EnterpriseService" />
+	</bean>
+
+	<bean id="ProductAction" class="com.R72X.action.ProductAction" scope="prototype">
+		<property name="productService" ref="ProductService" />
+		<property name="productcategoryService" ref="ProductcategoryService" />
+	</bean>
+	<bean id="ProductcategoryAction" class="com.R72X.action.ProductcategoryAction" scope="prototype">
+		<property name="productcategoryService" ref="ProductcategoryService" />
+		<property name="productService" ref="ProductService" />
+	</bean>
+
+   <bean id="ReportAction" class="com.R72X.action.ReportAction" scope="prototype">
+   <property name="productcategoryService" ref="ProductcategoryService" />
+   <property name="productService" ref="ProductService" />
+   <property name="compactService" ref="CompactService" />
+   </bean>
+   
+
+   
+
+   <bean id="ReportBarAction" class="com.R72X.action.ReportBarAction" scope="prototype">
+   <property name="productcategoryService" ref="ProductcategoryService" />
+   <property name="productService" ref="ProductService" />
+   <property name="compactService" ref="CompactService" />
+   </bean>
+   
+   <bean id="ReportLineAction" class="com.R72X.action.ReportLineAction" scope="prototype">
+   <property name="productcategoryService" ref="ProductcategoryService" />
+   <property name="productService" ref="ProductService" />
+   <property name="compactService" ref="CompactService" />
+   </bean>
+   
+  <bean id="SellerReportPieAction" class="com.R72X.action.SellerReportPieAction" scope="prototype">
+
+   <property name="userService" ref="UserService"></property>
+   <property name="compactService" ref="CompactService" />
+   
+   </bean>
+   
+     <bean id="SellerReportBarAction" class="com.R72X.action.SellerReportBarAction" scope="prototype">
+
+   <property name="userService" ref="UserService"></property>
+   <property name="compactService" ref="CompactService" />
+   
+   </bean>
+   
+     <bean id="SellerReportLineAction" class="com.R72X.action.SellerReportLineAction" scope="prototype">
+
+   <property name="userService" ref="UserService"></property>
+   <property name="compactService" ref="CompactService" />
+   
+   </bean>
+   
+   <bean id="EnterpriseReportPieAction" class="com.R72X.action.EnterpriseReportPieAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+   <property name="enterpriseService" ref="EnterpriseService" />
+  </bean>
+  
+  <bean id="EnterpriseReportBarAction" class="com.R72X.action.EnterpriseReportBarAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+   <property name="enterpriseService" ref="EnterpriseService" />
+  </bean>
+  
+  <bean id="EnterpriseReportLineAction" class="com.R72X.action.EnterpriseReportLineAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+   <property name="enterpriseService" ref="EnterpriseService" />
+  </bean>
+  
+  <bean id="AchievementPieAction" class="com.R72X.action.AchievementPieAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+  
+  </bean>
+
+<bean id="AchievementBarAction" class="com.R72X.action.AchievementBarAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+  
+  </bean>
+
+<bean id="AchievementLineAction" class="com.R72X.action.AchievementLineAction" scope="prototype">
+   <property name="compactService" ref="CompactService" />
+  
+  </bean>
+  
+ </beans>

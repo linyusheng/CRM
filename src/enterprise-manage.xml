@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="enterprise-manage" extends="com.R72X">       	
+    <action name="listenterprise" class="EnterpriseAction" method="search">
+     <result name="success">/enterprise-manage/list-enterprise.jsp</result>
+    </action>
+    <action name="addenterprise" class="EnterpriseAction" method="load">
+       <result>/enterprise-manage/add-enterprise.jsp</result>
+    </action>
+    <action name="saveenterprise" class="EnterpriseAction" method="save">
+       <result type="redirect">/listenterprise.action</result>
+    </action>
+    <action name="loadenterprise" class="EnterpriseAction" method="load">
+       <result>/enterprise-manage/edit-enterprise.jsp</result>
+    </action>
+    <action name="removeenterprise" class="EnterpriseAction" method="remove">
+			<result type="redirect">/listenterprise.action</result>
+	</action>
+	</package>
+
+</struts>    
+   

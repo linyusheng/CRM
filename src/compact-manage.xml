@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="compact-manage" extends="com.R72X">       	
+       
+       
+       <action name="listcompact" class="CompactAction" method="search">
+     <result>/compact-manage/list-compact.jsp</result>
+       </action>
+       
+       <action name="listoverduecompact" class="CompactAction" method="searchOverdueCompact">
+     <result>/compact-manage/list-overduecompact.jsp</result>
+       </action>
+       
+       <action name="loadcompact" class="CompactAction" method="loadEdit">
+			<result>/compact-manage/edit-compact.jsp</result>
+		</action>
+		
+		<action name="addcompact" class="CompactAction" method="load">
+			<result>/compact-manage/add-compact.jsp</result>
+		</action>
+		
+		<action name="viewcompact" class="CompactAction" method="load">
+			<result>/compact-manage/view-compact.jsp</result>
+		</action>
+		
+		<action name="viewoverduecompact" class="CompactAction" method="load">
+			<result>/compact-manage/view-overduecompact.jsp</result>
+		</action>
+		
+		<action name="savecompact" class="CompactAction" method="save">
+			<result type="redirect">/listcompact.action</result>
+		</action>
+       
+       <action name="removecompact" class="CompactAction" method="remove">
+          <result type="redirect">/listcompact.action</result>
+       </action>
+       
+        <action name="download" class="CompactAction" method="download">
+          <result type="redirect">/compact-manage/success.jsp</result>
+       </action>
+       <action name="getProducttmpAction" class="CompactAction" method="load">
+       		<result>/compact-manage/add-compact.jsp</result>
+       	</action>
+       	
+       	<action name="getProducttmpActionEdit" class="CompactAction" method="loadEdit">
+       		<result>/compact-manage/edit-compact.jsp</result>
+       	</action>
+       	
+       	
+	</package>
+
+</struts>    

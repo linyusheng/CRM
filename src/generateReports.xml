@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="chart" extends="com.R72X">
+				
+		<!-- 下面的action是用于显示生成报表页面的 -->
+		<action name="productsale" class="ReportAction" method="searchcategory">
+			<result name="success">/generateReports/productsale-report.jsp</result>
+		</action>
+
+       <!-- 下面的action是用于生成产品销售年度报表的 -->
+		<action name="productsalechart" class="ReportAction" method="productsaleChart">
+			<result type="chart">
+				<param name="width">1000</param> 
+				 <param name="height">600</param> 
+			</result>
+		</action>
+		
+		<action name="productsalebarchart" class="ReportBarAction" method="productsaleBarChart">
+		<result type="chart"> 
+		<!-- 定义 JFreeChart 报表的大小 --> 
+		<param name="width">1000</param> 
+		<param name="height">600</param> 
+		</result> 
+		</action>
+		
+		<action name="productsalelinechart" class="ReportLineAction" method="productsaleLineChart">
+		<result type="chart"> 
+		<!-- 定义 JFreeChart 报表的大小 --> 
+		<param name="width">1000</param> 
+		<param name="height">600</param> 
+		</result> 
+		</action>
+
+
+
+      <action name="sellerreport" class="SellerReportPieAction" method="searchSeller">
+	  <result name="success" >/generateReports/seller-report.jsp</result>
+	  </action>
+
+      <action name="sellerpiechart" class="SellerReportPieAction" method="sellerPieChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+	  </action>
+	  
+	  <action name="sellerbarchart" class="SellerReportBarAction" method="sellerBarChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+	  </action>
+	  
+	  <action name="sellerlinechart" class="SellerReportLineAction" method="sellerLineChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+	  </action>
+
+       <action name="enterprisesale" class="EnterpriseReportPieAction" method="getEnterpriseName">
+       <result >/generateReports/enterprisesale-report.jsp</result>
+
+		</action>
+		
+		 
+		<action name="enterprisesalepiechart" class="EnterpriseReportPieAction" method="enterprisesalepiechart">
+		<result type="chart"> 
+		<!-- 定义 JFreeChart 报表的大小 --> 
+		<param name="width">1000</param> 
+		<param name="height">600</param> 
+		</result> 
+		</action>
+		
+		<action name="enterprisesalebarchart" class="EnterpriseReportBarAction" method="enterprisesalebarchart">
+		<result type="chart"> 
+		<!-- 定义 JFreeChart 报表的大小 --> 
+		<param name="width">1000</param> 
+		<param name="height">600</param> 
+		</result> 
+		</action>
+		
+		<action name="enterprisesalelinechart" class="EnterpriseReportLineAction" method="enterprisesalelinechart">
+		<result type="chart"> 
+		<!-- 定义 JFreeChart 报表的大小 --> 
+		<param name="width">1000</param> 
+		<param name="height">600</param> 
+		</result> 
+		</action>	
+			
+
+			<action name="achievement" class="AchievementPieAction" method="doNothing">
+			<result name="success">/generateReports/achievement-report.jsp</result>
+
+			</action>	
+		
+			
+			<action name="achievementpiechart" class="AchievementPieAction" method="achievementpieChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+			</action>
+			<action name="achievementbarchart" class="AchievementBarAction" method="achievementBarChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+			</action>
+			<action name="achievementlinechart" class="AchievementLineAction" method="achievementLineChart">
+			<result type="chart">
+				<param name="width">1000</param>
+				<param name="height">600</param>
+			</result>
+			</action>
+			
+				
+		
+			
+			
+
+
+
+
+
+
+	</package>
+
+</struts>    

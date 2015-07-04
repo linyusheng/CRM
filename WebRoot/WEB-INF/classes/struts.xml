@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" /> 
+	<constant name="struts.ui.templateDir" value="template" /> 
+	<constant name="struts.ui.templateSuffix" value="ftl" /> 
+	<constant name="struts.configuration.xml.reload" value="true"/>
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8"/>
+	
+	<!-- struts2访问后缀限制 <constant name="struts.action.extension" value=""></constant>-->
+	
+	
+	<!-- struts2缺省配置 -->
+	<include file="struts-default.xml"></include>	
+	
+	
+	<package name="com.R72X" extends="jfreechart-default">
+		<interceptors>
+			
+			<!-- 定义是否登录检查拦截器 -->
+			<interceptor name="authority" class="com.R72X.util.PermissionInterceptor" />
+			
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="authority" />	
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			
+			
+		</interceptors>
+	
+	   <default-interceptor-ref name="mydefault" /> 
+
+		<global-results>
+			<!-- result name="exception">/error-500.jsp</result-->
+			<result name="404">/error-404.jsp</result>	
+			<result name="login">/login.jsp</result>					
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+
+		<action name="listcompact" class="CompactAction" method="search">
+			<result name="success">/compact-manage/list-compact.jsp</result>
+		</action>
+		
+		
+				
+	</package>
+
+	<include file="login.xml"></include>
+	<include file="user-manage.xml"></include>
+	<include file="product-manage.xml"></include>
+	<include file="generateReports.xml"></include>
+	<include file="complaint-manage.xml"></include>
+	<include file="compact-manage.xml"></include>
+	<include file="sell-manage.xml"></include>
+	<include file="enterprise-manage.xml"></include>
+	<include file="customer-manage.xml"></include>
+	<include file="commonproblem-manage.xml"></include>
+	<include file="problemsolution-manage.xml"></include>
+
+</struts>    
+   

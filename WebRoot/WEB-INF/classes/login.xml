@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="login-manage" extends="struts-default"> 
+		<global-results>
+			<result name="exception">/error-500.jsp</result>
+			<result name="404">/error-404.jsp</result>	
+			<result name="login">/login.jsp</result>
+			<result name="fail">/login.jsp</result>					
+		</global-results>
+		
+		
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		   
+       	<action name="login" class="LoginAction" method="login">			
+			<result type="redirect">/index</result>				
+						
+		</action>
+		
+		<action name="logout" class="LoginAction" method="logout">
+			<result type="redirect">/login</result>
+		</action>
+		
+		<action name="viewpersonalmessage" class="LoginAction" method="loadMessage">
+       		<result>/system-manage/view-personal-message.jsp</result>
+       		      		
+       	</action>
+
+       	<action name="editpersonalmessage" class="LoginAction" method="loadMessage">
+       		<result>/system-manage/edit-personal-message.jsp</result>
+       		
+       	</action>
+       	
+       	<action name="editpersonalpassword" class="LoginAction" method="doNothing">
+       		<result>/system-manage/edit-personal-password.jsp</result>
+       		
+       	</action>
+       	
+       	<action name="savepassword" class="LoginAction" method="savePassword">
+       		<result type="redirectAction">viewpersonalmessage</result>
+       		<result name="errorPassword">/system-manage/edit-personal-password.jsp</result>
+       	</action>
+		
+		<action name="savemessage" class="LoginAction" method="saveMessage">
+       		
+       		<!-- 配置文件上传拦截器 -->
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">1000000</param>
+			</interceptor-ref>
+			
+       		
+       		<result name="success" type="redirectAction">viewpersonalmessage</result>
+       		<result name="input">/system-manage/edit-personal-message.jsp</result>
+       	</action>
+		
+		<action name="index" class="LoginAction" method="doNothing">		
+			<result>/index.jsp</result>
+		</action>
+		
+		<!-- 下载图片到客户端显示 -->
+		<action name="downloadPhoto" class="LoginAction" method="download">	</action>
+					
+	</package>
+
+</struts>    
+   

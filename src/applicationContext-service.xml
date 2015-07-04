@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   
+    <bean id="CompactService" class="com.R72X.service.CompactService">
+       	<property name="compactDAO">
+			<ref bean="CompactDAO" />
+		</property>
+	</bean>	
+
+	<bean id="UserService" class="com.R72X.service.UserService">
+		<property name="userDAO">
+			<ref bean="UserDAO"/>
+		</property>
+	</bean>
+
+	<bean id="CustomerService" class="com.R72X.service.CustomerService">
+		<property name="customerDAO">
+	     <ref bean="CustomerDAO" />
+		</property>
+		<property name="sellsopportunityService">
+	     <ref bean="SellsopportunityService" />
+		</property>
+	</bean>
+
+	<bean id="EnterpriseService" class="com.R72X.service.EnterpriseService">
+		<property name="enterpriseDAO">
+	     <ref bean="EnterpriseDAO" />
+		</property>
+		<property name="customerService">
+	     <ref bean="CustomerService" />
+		</property>
+	</bean>	
+
+	<bean id="ComplaintService" class="com.R72X.service.ComplaintService">
+		<property name="complaintDAO">
+			<ref bean="ComplaintDAO"/>
+		</property>
+	</bean>
+	<bean id="CommonProblemService" class="com.R72X.service.CommonProblemService">
+		<property name="commonproblemDAO">
+	     <ref bean="CommonproblemDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProblemSolutionService" class="com.R72X.service.ProblemSolutionService">
+		<property name="problemsolutionDAO">
+	    	<ref bean="ProblemsolutionDAO" />
+		</property>
+	</bean>
+
+	 <bean id="ContactnoteService" class="com.R72X.service.ContactnoteService">
+		<property name="contactnoteDAO">
+	     <ref bean="ContactnoteDAO" />
+		</property>
+	</bean>
+
+	<bean id="SellsopportunityService" class="com.R72X.service.SellsopportunityService">
+		<property name="sellsopportunityDAO">
+		 <ref bean="SellsopportunityDAO" />
+		</property>
+		<property name="sellswarnService">
+		 <ref bean="SellswarnService" />
+		</property>
+	</bean>
+
+	<bean id="SellswarnService" class="com.R72X.service.SellswarnService">
+		<property name="sellswarnDAO">
+		 <ref bean="SellswarnDAO" />
+		</property>
+		<property name="sellsopportunityService">
+		 <ref bean="SellsopportunityService" />
+		</property>
+	</bean>
+
+	<bean id="ContactplanService" class="com.R72X.service.ContactplanService">
+		<property name="contactplanDAO">
+	     <ref bean="ContactplanDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProductcategoryService" class="com.R72X.service.ProductcategoryService">
+		<property name="productcategoryDAO">
+	     <ref bean="ProductcategoryDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProductService" class="com.R72X.service.ProductService">
+		<property name="productDAO">
+	     <ref bean="ProductDAO" />
+		</property>
+	</bean>
+
+</beans>
+
+
+

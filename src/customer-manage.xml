@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="customer-manage" extends="com.R72X">       	
+    <action name="listcustomer" class="CustomerAction" method="search">
+     <result name="success">/sell-manage/list-customer.jsp</result>
+    </action>
+    <action name="addcustomer" class="CustomerAction" method="searchEnterprise">
+       <result name="success">/sell-manage/add-customer.jsp</result>
+    </action>
+    <action name="savecustomer" class="CustomerAction" method="save">
+       <result type="redirect">/listcustomer.action</result>
+    </action>
+    <action name="loadcustomer" class="CustomerAction" method="load">
+       <result>/sell-manage/edit-customer.jsp</result>
+    </action>
+    <action name="removecustomer" class="CustomerAction" method="remove">
+		<result type="redirect">/listcustomer.action</result>
+	</action>
+	</package>
+
+</struts>    
+   

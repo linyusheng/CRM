@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="commonproblem" extends="com.R72X">    
+	
+		<!-- 增加常见问题 -->
+		<action name="addcommonproblem" class="CommonProblemAction" method="add">
+	    	<result name="success">/commonproblem-manage/add-commonproblem.jsp</result>
+	    </action>
+	   	
+       	<!-- 显示所有常见问题 -->
+	    <action name="listcommonproblem" class="CommonProblemAction" method="search">
+	    	<result name="success">/commonproblem-manage/list-commonproblem.jsp</result>
+	    </action>
+	    
+	    <!-- 增加修改常见问题的数据保存 -->
+	    <action name="savecommonproblem" class="CommonProblemAction" method="save">
+	    	<result  type="redirect">/listcommonproblem.action</result>
+	    </action>
+	    
+	    <!-- 查找常见问题 -->
+	    <action name="loadcommonproblem" class="CommonProblemAction" method="load">
+	    	<result name="success">/commonproblem-manage/edit-commonproblem.jsp</result>
+	    </action>
+	    
+	    <!-- 查看常见问题 -->
+	    <action name="viewcommonproblem" class="CommonProblemAction" method="load">
+	    	<result name="success">/commonproblem-manage/view-commonproblem.jsp</result>
+	    </action>
+	    
+	    <!-- 删除常见问题 -->
+	    <action name="removecommonproblem" class="CommonProblemAction" method="remove">
+	    	<result type="redirect">/listcommonproblem.action</result>
+	    </action>
+	</package>
+
+</struts>    
+   

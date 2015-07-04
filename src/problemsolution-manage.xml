@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="problemsolution-manage" extends="com.R72X">   
+	
+		<!-- 增加疑难问题 -->
+		<action name="addproblem" class="ProblemSolutionAction" method="add">
+	    	<result name="success">/problemsolution-manage/add-problemsolution.jsp</result>
+	    </action>
+	
+	    	
+       	<!-- 显示所有疑难问题 -->
+	    <action name="listproblem" class="ProblemSolutionAction" method="search">
+	    	<result name="success">/problemsolution-manage/list-problemsolution.jsp</result>
+	    </action>
+	    
+	    <!-- 增加修改疑难问题的数据保存 -->
+	    <action name="saveproblem" class="ProblemSolutionAction" method="save">
+	    	<result  type="redirect">/listproblem.action</result>
+	    </action>
+	    
+	    <!-- 查找疑难问题 -->
+	    <action name="loadproblem" class="ProblemSolutionAction" method="load">
+	    	<result name="success">/problemsolution-manage/edit-problemsolution.jsp</result>
+	    </action>
+	    
+	    <!-- 读取相应状态疑难问题 -->
+	    <action name="mulloadproblem" class="ProblemSolutionAction" method="mulLoad">
+	    	<result name="un">/problemsolution-manage/view-problemsolution(un).jsp</result>
+	    	<result name="ing">/problemsolution-manage/view-problemsolution(ing).jsp</result>
+	    	<result name="over">/problemsolution-manage/view-problemsolution(over).jsp</result>
+	    </action>
+	    
+	    <!-- 删除疑难问题 -->
+	    <action name="removeproblem" class="ProblemSolutionAction" method="remove">
+	    	<result type="redirect">/listproblem.action</result>
+	    </action>
+	    
+	    <!-- 修改疑难问题状态 -->
+	    <action name="changestate" class="ProblemSolutionAction" method="changeState">
+	    	<result type="redirect">/listproblem.action</result>
+	    </action>
+	    
+	    <!-- 筛选疑难问题 
+	    <action name="state" class="ProblemSolutionAction" method="searchState">
+	    	<result name="success">/problemsolution-manage/list-problemsolution.jsp</result>
+	    </action>-->
+	</package>
+
+</struts>    
+   

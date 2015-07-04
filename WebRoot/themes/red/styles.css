@@ -1,0 +1,44 @@
+/* Red Theme Stylesheet */
+
+	.contentcontainer .altheading {background: url(img/bg_heading_alt.png); border: 1px solid #7A0000; color: #fff; text-shadow: 1px 1px 1px #7A0000;}
+
+	/* Navigation Styling */
+			
+	ul#nav li a.heading, a.collapsed, a.expanded, ul.navigation li.selected{border-bottom: 1px solid #9F0000; border-top: 1px solid #900; text-shadow: 1px 1px 1px #0D2C35; background: url(img/bg_navigation.png) no-repeat top;}
+	
+	ul#nav li a.expanded {background: url(img/bg_navigation.png) 0 -76px;}
+	
+	ul#nav li a.collapsed:hover {background: url(img/bg_navigation.png) no-repeat 0 -38px; width: 205px;}
+	ul#nav li a.expanded:hover {background: url(img/bg_navigation.png) no-repeat 0 -114px; width: 205px;}
+
+	ul.navigation li.selected {background: url(img/bg_navigation_selected.png) no-repeat -1px 0; border: none;}
+	
+	/* Side Notifications */
+	
+	.notifycount {background: url(img/bg_notify_count.png) no-repeat top;}
+	
+	/* Pagination */
+	
+	ul.pagination li.page a {background: #00789F url(img/bg_buttons.png) repeat-x top; border: 1px solid #7A0000;}
+		ul.pagination li.page a:hover {background: #00789F url(img/bg_buttons.png) 0 -50px; border: 1px solid #7A0000;}
+	
+	/* Button Styling */
+	
+	.btn, .btnalt {background: url(img/bg_buttons.png) repeat-x top; border: 1px solid #7A0000!important; color: #fff; font-size: 11px; padding: 7px 10px; boirder-radius: 7px; -moz-border-radius: 7px; font-weight: 700; border: none;}
+		.btn:hover {background: url(img/bg_buttons.png) 0 -50px; border: 1px solid #005977; cursor: pointer;}
+		
+	.btnalt {background: url(img/bg_buttons_alternative.png) repeat-x top !important; border: 1px solid #333 !important; color: #fff; padding: 7px 10px; border: none;}
+		.btnalt:hover {background: url(img/bg_buttons_alternative.png) 0 -50px !important; border: 1px solid #111 !important; cursor: pointer;}		
+	
+	/* Login Page */
+	
+	.logininput {background: #fff url(img/bg_login_input.png) repeat-x top;}
+	.logininput:focus {border: 1px solid #c00; color: #c00;}
+				
+		#logincontainer .loginbtn {background: url(img/bg_login_btn.png) repeat-x top; border-radius: 8px; -moz-border-radius: 8px; border: none; font-size: 25px; font-weight: 700; text-shadow: 1px 1px 1px #DF8F8F; color: #510000; width: 260px; padding: 11px 0; margin: 5px 0 0 0; display: block; cursor: pointer; border-top: 1px solid #CE5757; letter-spacing: -1px;}
+		
+		#logincontainer .loginbtn:hover {background: url(img/bg_login_btn.png) -0 -60px; cursor: pointer; color: #270C0C;}
+		
+		
+			
+	

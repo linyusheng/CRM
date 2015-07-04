@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>     
+	<package name="sell-manage" extends="com.R72X">   
+	
+	<action name="listenterpriseforsell" class="EnterpriseAction" method="search">
+     <result name="success">/sell-manage/list-enterpriseforsell.jsp</result>  
+     </action> 
+     <action name="listenterpriseforselltmp" class="EnterpriseAction" method="search">
+		 <result name="success">/sell-manage/list-enterpriseforsell.jsp</result>
+		</action>
+      	
+    <action name="listcontactnote" class="ContactnoteAction" method="search">
+         <result name="success">/sell-manage/list-contactnote.jsp</result>
+		</action>
+		
+		<action name="loadcontactnote" class="ContactnoteAction" method="load">
+			<result name="success">/sell-manage/view-contactnote.jsp</result>
+		</action>
+		
+		<action name="editcontactnote" class="ContactnoteAction" method="load">
+			<result name="success">/sell-manage/edit-contactnote.jsp</result>
+		</action>
+		
+		<action name="addcontactnote" class="ContactnoteAction" method="load">
+			<result name="success">/sell-manage/add-contactnote.jsp</result>
+		</action>
+		
+		<action name="savecontactnote" class="ContactnoteAction" method="save">
+			<result type="redirect">/listcontactnote.action</result>
+		</action>
+		
+		<action name="removecontactnote" class="ContactnoteAction" method="remove">
+			<result type="redirect">/listcontactnote.action</result>
+		</action>
+
+
+	    <action name="listcontactplan" class="ContactplanAction" method="search">
+			<result name="success">/sell-manage/list-contactplan.jsp</result>
+		</action>
+		
+		<action name="loadcontactplan" class="ContactplanAction" method="load">
+			<result name="success">/sell-manage/view-contactplan.jsp</result>
+		</action>
+		
+		<action name="editcontactplan" class="ContactplanAction" method="load">
+			<result name="success">/sell-manage/edit-contactplan.jsp</result>
+		</action>
+		
+		<action name="addcontactplan" class="ContactplanAction" method="load">
+			<result name="success">/sell-manage/add-contactplan.jsp</result>
+		</action>
+		
+		<action name="savecontactplan" class="ContactplanAction" method="save">
+			<result type="redirect">/listcontactplan</result>
+		</action>
+		
+		<action name="removecontactplan" class="ContactplanAction" method="remove">
+			<result type="redirect">/listcontactplan</result>
+		</action>
+		
+		<action name="listsellsopportunity" class="SellsopportunityAction" method="search">
+		 <result name="success">/sell-manage/list-sellsopportunity.jsp</result>
+		</action>
+		<action name="loadsellsopportunity" class="SellsopportunityAction" method="load">
+		 <result name="success">/sell-manage/view-sellsopportunity.jsp</result>
+		</action>
+		<action name="addsellsopportunity" class="SellsopportunityAction" method="load">
+		 <result name="success">/sell-manage/edit-sellsopportunity.jsp</result>
+		</action>
+		<action name="editsellsopportunity" class="SellsopportunityAction" method="load">
+		 <result name="success">/sell-manage/edit-sellsopportunity.jsp</result>
+		</action>
+		<action name="savesellsopportunity" class="SellsopportunityAction" method="save">
+		 <result type="redirect">/listsellsopportunity.action</result>
+		</action>
+		<action name="removesellsopportunity" class="SellsopportunityAction" method="remove">
+		 <result type="redirect">/listsellsopportunity.action</result>
+		</action>
+		<action name="listsellswarn" class="SellswarnAction" method="search">
+		 <result name="success">/sell-manage/list-sellswarn.jsp</result>
+		</action>
+		<action name="loadsellswarn" class="SellswarnAction" method="load">
+		 <result name="success">/sell-manage/view-sellswarn.jsp</result>
+		</action>
+		<action name="addsellswarn" class="SellswarnAction" method="load">
+		 <result name="success">/sell-manage/edit-sellswarn.jsp</result>
+		</action>
+		<action name="editsellswarn" class="SellswarnAction" method="load">
+		 <result name="success">/sell-manage/edit-sellswarn.jsp</result>
+		</action>
+		<action name="savesellswarn" class="SellswarnAction" method="save">
+		 <result type="redirect">/listsellswarn</result>
+		</action>
+		<action name="removesellswarn" class="SellswarnAction" method="remove">
+		 <result type="redirect">/listsellswarn</result>
+		 
+		</action>
+		
+		<action name="listproductforsell" class="ProductAction" method="search">
+		 <result name="success">/sell-manage/list-product.jsp</result>
+		</action>
+		<action name="loadproductforsell" class="ProductAction" method="load">
+		 <result name="success">/sell-manage/view-product.jsp</result>
+		</action>
+	</package>
+
+</struts>    
+   
